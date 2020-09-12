@@ -74,80 +74,94 @@ document.getElementById("generate").addEventListener("click", function () {
 // Script will exit if not verified, if verified we Proceed to Grouping Password to User input.
   function generatePWD() {
     for (var i = 0; i <= length; i++) {
+      console.log(pSelection);
       password = password + pSelection.charAt(Math.floor(Math.random() * Math.floor(pSelection.length - 1)));
     }
   }
 
   // IF STATEMENTS if User Prefers LowerCase
   if (wantsLower && !wantsUpper && !wantsNumbers && !wantsSpecial) {
-    pSelection = lowercaseAlphabetChar;
+    pSelection = lowercaseAlphabetChar + "";
     generatePWD();
   }
   // LowerCase and UpperCase
   else if (wantsLower && wantsUpper && !wantsNumbers && !wantsSpecial) {
     pSelection = lowercaseAlphabetChar + uppercaseAlphabetChar;
+    console.log(pSelection);
     generatePWD();
   }
 
   //LowerCase and UpperCase and Numbers
   else if (wantsLower && wantsUpper && wantsNumbers && !wantsSpecial) {
     pSelection = lowercaseAlphabetChar + uppercaseAlphabetChar + numericChar;
+    console.log(pSelection);
     generatePWD();
   }
   // Everything
   else if (wantsLower && wantsUpper && wantsNumbers && wantsSpecial) {
     pSelection = lowercaseAlphabetChar + uppercaseAlphabetChar + numericChar + specialChar;
+    console.log(pSelection);
     generatePWD();
   }
   //Lowercase and Numbers
   else if (wantsLower && !wantsUpper && wantsNumbers && !wantsSpecial) {
-    pSelection = lowercaseAlphabetChar + numericChar;
+    pSelection = lowercaseAlphabetChar + numericChar; // ["abc...."]+["123....."] = "abc123"
+    console.log(pSelection);
     generatePWD();
   }
   //Lowercase and Numbers and Special
   else if (wantsLower && !wantsUpper && wantsNumbers && wantsSpecial) {
     pSelection = lowercaseAlphabetChar + numericChar + specialChar;
+    console.log(pSelection);
     generatePWD();
   }
   // Lowercase and Special
   else if (wantsLower && !wantsUpper && !wantsNumbers && wantsSpecial) {
     pSelection = lowercaseAlphabetChar + specialChar;
+    console.log(pSelection);
     generatePWD();
   }
   // Uppercase
   else if (!wantsLower && wantsUpper && !wantsNumbers && !wantsSpecial) {
-    pSelection = uppercaseAlphabetChar;
+    pSelection = uppercaseAlphabetChar + "";
+    console.log(pSelection);
     generatePWD();
   }
   // UpperCase and Numbers
   else if (!wantsLower && wantsUpper && wantsNumbers && !wantsSpecial) {
     pSelection = uppercaseAlphabetChar + numericChar;
+    console.log(pSelection);
     generatePWD();
   }
 
   // Uppercase and Numbers and Special
   else if (!wantsLower && wantsUpper && wantsNumbers && wantsSpecial) {
     pSelection = uppercaseAlphabetChar + numericChar + specialChar;
+    console.log(pSelection);
     generatePWD();
   }
   // Uppercase and Special
   else if (!wantsLower && wantsUpper && !wantsNumbers && wantsSpecial) {
     pSelection = uppercaseAlphabetChar + specialChar;
+    console.log(pSelection);
     generatePWD();
   }
   // Numbers
   else if (!wantsLower && !wantsUpper && wantsNumbers && !wantsSpecial) {
-    pSelection = numericChar;
+    pSelection = numericChar+ "" ;
+    console.log(pSelection);
     generatePWD();
   }
   // Numbers and Special
   else if (!wantsLower && !wantsUpper && wantsNumbers && wantsSpecial) {
     pSelection = numericChar + specialChar;
+    console.log(pSelection);
     generatePWD();
   }
   // Special
   else if (!wantsLower && !wantsUpper && !wantsNumbers && wantsSpecial) {
-    pSelection = specialChar;
+    pSelection = specialChar+ "" ;
+    console.log(pSelection);
     generatePWD();
   }
 
